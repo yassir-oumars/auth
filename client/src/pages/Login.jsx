@@ -32,12 +32,24 @@ export default function Login() {
 
   return (
     <div>
-        <form onSubmit={loginUser}>
-            <label>Email</label>
-            <input type='email' placeholder='enter your email ...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
-            <label>Password</label>
-            <input type='password' placeholder='enter your password ...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
-            <button type='submit' >Login</button>
+        <form >
+        <div className={'mainContainer'}>
+        <div className={'titleContainer'}>
+        <div>Login</div>
+        </div>
+       <br />
+       <div className={'inputContainer'}>
+            <input type='email' placeholder='Enter your email here' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} className={'inputBox'} />
+            </div>
+            <br />
+            <div className={'inputContainer'}>
+            <input type='password' placeholder='Enter your password here' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} className={'inputBox'}/>
+            </div>
+            <br />
+            <div className={'inputContainer'}>
+            <input className={'inputButton'} type="button" value={'Log in'} onClick={loginUser} />
+      </div>
+    </div>
         </form>
     </div>
   )
